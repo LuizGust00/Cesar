@@ -1,6 +1,6 @@
 from equacoes import *
 
-def analfabeto(numero):
+def analfabeto(numero): # O rodrigo é uma pessoa especial.
     match numero:
         case 2: return 'A'
         case 3: return 'B'
