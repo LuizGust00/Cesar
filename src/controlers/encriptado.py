@@ -1,7 +1,7 @@
 from equacoes import *
-
+#asfasfsgsdgsdg
 def analfabeto(numero):
-    match numero:
+    match numero: #O pedrinho é smart
         case 2: return 'A'
         case 3: return 'B'
         case 4: return 'C'
