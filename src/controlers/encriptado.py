@@ -1,5 +1,10 @@
-from equacoes import *
-#asfasfsgsdgsdg
+from .equacoes import *
+import os
+
+pasta_raiz = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+pasta_textos = os.path.join(pasta_raiz, "textos")
+saida_pasta = os.path.join(pasta_textos, "saida")
+
 def analfabeto(numero):
     match numero: #O pedrinho é smart
         case 2: return 'A'
@@ -93,32 +98,19 @@ def descriptografar(codigo, chave):
         mensagem += analfabeto(m)
     return mensagem
 
-sistema = input("Escolher as chaves manualmente (M) ou automaticamente (A)? ")
-if sistema.upper() == 'M':
-    p = int(input("Digite um número primo p: "))
-    q = int(input("Digite um número primo q: "))
-    e = int(input("Digite o expoente e (coprimo de φ(n)): "))
-else:
-    p = 13
-    q = 11
-    e = 73
+def gerar_txt(caminho, codigo):
+    separador = " "
+    texto = separador.join(str(numero) for numero in codigo)
+    with open(caminho, "w", encoding="utf-8") as arquivo:
+        arquivo.write(texto)
 
-print("-------------------------------------------------------")
-print(f"p: {p}, q: {q}, e: {e}")
-chaves = validar_numeros(p, q, e)
-if chaves == None:
-    print("Chaves inválidas.")
-    quit()
-print(f"chaves privadas: {chaves[0]} e públicas: {chaves[1]}")
-print("-------------------------------------------------------")
+def ler_codigo(caminho):
+    with open(caminho, "r", encoding="utf-8") as arquivo:
+        numeros = arquivo.readline()
+        codigo = [int(n) for n in numeros.split()]
+    return codigo
 
-texto = input("Digite a mensagem a ser criptografada: ")
-print("-------------------------------------------------------")
-
-codigo = criptografar(texto, chaves[1])
-print("Mensagem criptografada:", codigo)
-print("-------------------------------------------------------")
-
-mensagem = descriptografar(codigo, chaves[0])
-print("mensagem descriptografada:", mensagem)    
-#print(eh_primo(chaves[1][0]))
+def ler_texto(caminho):
+    with open(caminho, "r", encoding="utf-8") as arquivo:
+        texto = arquivo.readline()
+    return texto
