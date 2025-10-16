@@ -18,9 +18,10 @@ else:
 
 print("-------------------------------------------------------")
 print(f"p: {p}, q: {q}, e: {e}")
+print("-------------------------------------------------------")
 chaves = validar_numeros(p, q, e)
-if chaves == None:
-    print("Chaves inválidas.")
+if isinstance(chaves, str):
+    print(chaves)
     quit()
 print(f"chaves privadas: {chaves[0]} e públicas: {chaves[1]}")
 print("-------------------------------------------------------")

@@ -1,5 +1,4 @@
-
-
+streamlit=1.50.0
 
 #Para criar Builds
 #pyinstaller --onefile --windowed --name="Cesar" caminho_do_arquivo

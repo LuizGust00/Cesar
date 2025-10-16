@@ -67,20 +67,17 @@ def alfabeto(letra):
 
 def validar_numeros(p, q, e):
     if not eh_primo(p): 
-        print(f"o número {p} em p não é primo.")
-        return
+        return f"o número {p} em p não é primo."
     if not eh_primo(q): 
-        print(f"o número {q} em q não é primo.")
-        return
+        return f"o número {q} em q não é primo."
     
     n = p * q
     euler = euler_n(p, q)
     if not eh_coprimo(euler, e): 
-        print(f"o número do expoente que é {e} é coprimo de euler de n:{euler}.")
-        return
+        return f"o número do expoente que é {e} é coprimo de euler de n:{euler}."
     
     d = inverso_modular(e, euler)
-    print(f"Parâmetros válidos. n: {n}, euler: {euler}, d: {d}, e: {e}")
+    #print(f"Parâmetros válidos. n: {n}, euler: {euler}, d: {d}, e: {e}")
     return [(n, d), (n, e)]
 
 def criptografar(mensagem, chave):
