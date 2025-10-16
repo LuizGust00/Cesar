@@ -37,24 +37,32 @@ def terminal_criptografar():
 
 def terminal_descriptografar():
     nome_arquivo = input("Nome do arquivo (não coloque .txt): ") + ".txt"
+    print("-------------------------------------------------------")  
     caminho_arquivo = os.path.join(pasta_textos, "entrada_codigo", nome_arquivo)
     codigo = ler_codigo(caminho_arquivo)
     texto = descriptografar(codigo, chaves[0])
     print(texto)
+    print("-------------------------------------------------------")  
 
 def terminal_crip_arquivo():
     nome_arquivo = input("Nome do arquivo (não coloque .txt): ") + ".txt"
+    print("-------------------------------------------------------")  
     caminho_arquivo = os.path.join(pasta_textos, "entrada_texto", nome_arquivo)
     mesagem = ler_texto(caminho_arquivo)
     codigo = criptografar(mesagem, chaves[1])
     nome_arquivo = input("Digite o nome do arquivo gerado (não coloque .txt): ") + ".txt"
+    print("-------------------------------------------------------")  
     caminho_arquivo = os.path.join(saida_pasta, nome_arquivo)
     gerar_txt(caminho_arquivo, codigo)
 
-fazer = input("Você vai criptografar (C), descriptografar (D) ou criptografar arquivo (A)? ")
-if fazer.upper() == 'C':
-    terminal_criptografar()
-elif fazer.upper() == 'D':
-    terminal_descriptografar()
-elif fazer.upper() == 'A':
-    terminal_crip_arquivo()
+while True:
+    fazer = input("Você vai criptografar (C), descriptografar (D) ou criptografar arquivo (A)? ")
+    print("-------------------------------------------------------") 
+    if fazer.upper() == 'C':
+        terminal_criptografar()
+    elif fazer.upper() == 'D':
+        terminal_descriptografar()
+    elif fazer.upper() == 'A':
+        terminal_crip_arquivo()
+    else:
+        break
