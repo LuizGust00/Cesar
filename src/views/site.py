@@ -5,7 +5,6 @@ p = st.number_input("Digite um primo para p", step=1, value=11)
 q = st.number_input("Digite um primo para q", step=1, value=13)
 e = st.number_input("Digite o expoente e (coprimo de φ(n))", step=1, value=73)
 
-
 chaves = validar_numeros(p, q, e)
 if isinstance(chaves, str):
     st.error(chaves)
