@@ -31,7 +31,7 @@ def terminal_criptografar():
     print("-------------------------------------------------------")
     p_n = input("Digite o N da chave publica:")
     p_e = input("Digite o E da chave publica:")
-    codigo = criptografar(texto, (p_n, p_e))
+    codigo = criptografar(texto, (int (p_n), int(p_e)))
     nome_arquivo = input("Digite o nome do arquivo de texto (não coloque .txt): ") + ".txt"
     caminho_arquivo = os.path.join(saida_pasta, nome_arquivo)
     gerar_txt(caminho_arquivo, codigo)
