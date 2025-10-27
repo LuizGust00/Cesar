@@ -122,9 +122,9 @@ def enviar_mensagem_pv(caminho, nome_eu, destinatario, texto):
     except:
         arquivo = []
     
-    print(vars(mesagem))
+    #print(vars(mesagem))
     arquivo.append(vars(mesagem))
-    print(arquivo)
+    #print(arquivo)
 
     try:   
         with open(caminho, "w", encoding="utf-8") as f:

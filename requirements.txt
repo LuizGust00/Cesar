@@ -1,5 +1,14 @@
 streamlit=1.50.0
 
+#python -m src.data.controle_dados_chat
+
+# pip install litecli
+# litecli <db_name>
+
+#Colocar site local na internet usando ngrok
+#Caminho para luiz /usr/local/bin
+#ngrok http (porta do site)
+
 #Para criar Builds
 #pyinstaller --onefile --windowed --name="Cesar" caminho_do_arquivo
 #pip install pyinstaller
