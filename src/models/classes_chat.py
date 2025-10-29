@@ -120,7 +120,7 @@ class Chats:
     @classmethod
     def adicinar_integrantes(cls, id: int, cursor: sqlite3.Cursor, integrantes=[]):
         integrantes_antiga = []
-        cursor.execute('SELECT conversas FROM conversas WHERE id = ?', (id,))
+        cursor.execute('SELECT integrantes FROM chats WHERE id = ?', (id,))
         dados_bruto = cursor.fetchone()[0]
         integrantes_antiga = json.loads(dados_bruto)
         if not conversa in integrantes_antiga:

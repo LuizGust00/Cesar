@@ -28,11 +28,11 @@ if fazer == "Descriptografar":
             st.write(texto)
             st.success("Arquivo lido com sucesso!")
         except Exception as e:
-            st.error("Ocorreu um erro no arquivo ou a chave é diferente da chave que criptografol")
+            st.error("Ocorreu um erro no arquivo ou a chave é diferente da chave que criptografou")
 elif fazer == "Criptografar":
     texto_cript = st.text_input("Texto para ser criptografodo")
-    p_n = st.number_input("Digite o n da chave pública", step=1, value=11)
-    p_e = st.number_input("Digite o e da chave pública", step=1, value=11)
+    p_n = st.number_input("Digite o n da chave pública", step=1, value=143)
+    p_e = st.number_input("Digite o e da chave pública", step=1, value=73)
     codigo_crip = criptografar(texto_cript, (p_n, p_e))
     st.write(codigo_crip)
     codigo_string = " ".join(str(n) for n in codigo_crip)

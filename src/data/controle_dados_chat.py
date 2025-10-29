@@ -24,6 +24,15 @@ if __name__ == "__main__":
                     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     usuario_teste BOOL DEFAULT FALSE,
                     conversas TEXT DEFAULT '[]'
+                ) ''')
+
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS chats(
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    integrantes TEXT DEFAULT '[]',
+                    ultima_modificacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    chat_teste BOOL DEFAULT FALSE
                 ) ''')   
             #cursor.execute('ALTER TABLE usuarios ADD COLUMN conversas TEXT')     
     except Exception as e:
